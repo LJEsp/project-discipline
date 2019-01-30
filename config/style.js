@@ -47,11 +47,12 @@ export default {
     }
   },
   size: {
-    xs: "0.25em", // 4
-    s: "0.5em", // 8
-    m: "1em", // 16
-    l: "2em", // 32
-    xl: "4em", // 64
+    xs: "0.25em", // >>> 4
+    s: "0.5em", // >>> 8
+    m: "1em", // >>> 16
+    l: "2em", // >>> 32
+    xl: "4em", // >>> 64
+    base: "3em", // >>> 24px/3em for desktop, 16px/1em for mobile
     em: px => `${px / 16}em`
   },
   shadow: [
