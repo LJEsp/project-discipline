@@ -149,7 +149,7 @@ const Box = ({ name, wrap, ...props }) => {
   return props.animate ? (
     <AnimatedBox
       className={name ? `box box-${name}` : "box"}
-      wrap={wrap ? "true" : "false"}
+      wrap={wrap ? 1 : 0}
       {...props}
     >
       {props.children}
@@ -157,7 +157,7 @@ const Box = ({ name, wrap, ...props }) => {
   ) : (
     <StyledBox
       className={name ? `box box-${name}` : "box"}
-      wrap={wrap ? "true" : "false"}
+      wrap={wrap ? 1 : 0}
       {...props}
     >
       {props.children}

@@ -9,10 +9,10 @@ const StyledText = styled.span`
   ${props => textCrop(props.theme.font.lineHeight)}
 
   color: ${props => (props.as === "h1" ? "red" : "green")};
-  font-size: ${props => props.theme.font.scale[3]};
+  font-size: ${props => props.theme.font.scale[1]};;
 `;
 
-export class Text extends Component {
+export class Typography extends Component {
   static propTypes = {
     children: PropTypes.string.isRequired
   };
@@ -26,4 +26,4 @@ export class Text extends Component {
   }
 }
 
-export default Text;
+export default Typography;

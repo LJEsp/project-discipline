@@ -1,25 +1,18 @@
 import React, { Component, Fragment } from "react";
 import styled, { createGlobalStyle } from "styled-components";
-import Text from "../components/Text/Text";
+import Typography from "../components/Typography/Typography";
 import { Item, Box, Container, Area } from "../components/Layout/Layout";
 import { Spring } from "react-spring";
 
-// >>> GlobalStyle
-const GlobalStyle = createGlobalStyle`
-  html, body, #__next {
-    height: 100%;
-  }
-`;
-
 const StyledWrapper = styled.div`
+  width: 100vw;
+
   .area {
     border: 2px dashed red;
-    /* background-color: rgba(255, 0, 0, 0.5); */
   }
 
   .container {
     border: 2px dashed green;
-    /* background-color: rgba(0, 255, 0, 0.5); */
   }
 
   .box {
@@ -37,94 +30,128 @@ export default class extends Component {
   render() {
     return (
       <Fragment>
-        <GlobalStyle />
-
         <StyledWrapper>
-          <Area padding="inset-base">
-            <Container margin="stack-base">
-              <Box name="test" row align="flex-start" margin="stack-base">
+          <Box>
+            <Item topleft padding="squish-l" margin="inline-xl">
+              <Typography>Logo</Typography>
+            </Item>
+            <Item topleft padding="squish-l" margin="inline-base">
+              <Typography>Home</Typography>
+            </Item>
+            <Item topleft padding="squish-l" margin="inline-base">
+              <Typography>Shop</Typography>
+            </Item>
+            <Item topleft padding="squish-l" margin="inline-base">
+              <Typography>About</Typography>
+            </Item>
+            <Item topleft padding="squish-l" margin="inline-base">
+              <Typography>Contact</Typography>
+            </Item>
+          </Box>
+
+          <Area name="1" padding="inset-base">
+            <Container name="fruits" margin="stack-base">
+              <Item margin="stack-base">
+                <Typography>Padding &mdash; Inset</Typography>
+              </Item>
+
+              <Box row align="flex-start" margin="stack-xl">
                 <Item center padding="inset-base">
-                  <Text>Inset Base</Text>
+                  <Typography>Inset Base</Typography>
                 </Item>
                 <Item center padding="inset-xs">
-                  <Text>Inset XS</Text>
+                  <Typography>Inset XS</Typography>
                 </Item>
                 <Item center padding="inset-s">
-                  <Text>Inset S</Text>
+                  <Typography>Inset S</Typography>
                 </Item>
                 <Item center padding="inset-m">
-                  <Text>Inset M</Text>
+                  <Typography>Inset M</Typography>
                 </Item>
                 <Item center padding="inset-l">
-                  <Text>Inset L</Text>
+                  <Typography>Inset L</Typography>
                 </Item>
                 <Item center padding="inset-xl">
-                  <Text>Inset XL</Text>
+                  <Typography>Inset XL</Typography>
                 </Item>
               </Box>
 
-              <Box row wrap align="flex-start" margin="stack-base">
+              <Item margin="stack-base">
+                <Typography>Padding &mdash; Squish</Typography>
+              </Item>
+
+              <Box row wrap align="flex-start" margin="stack-xl">
                 <Item center padding="squish-s">
-                  <Text>Squish S</Text>
+                  <Typography>Squish S</Typography>
                 </Item>
                 <Item center padding="squish-m">
-                  <Text>Squish M</Text>
+                  <Typography>Squish M</Typography>
                 </Item>
                 <Item center padding="squish-l">
-                  <Text>Squish L</Text>
+                  <Typography>Squish L</Typography>
                 </Item>
               </Box>
 
-              <Box row align="flex-start" margin="stack-base">
+              <Item margin="stack-base">
+                <Typography>Padding &mdash; Stretch</Typography>
+              </Item>
+
+              <Box row align="flex-start" margin="stack-xl">
                 <Item center padding="stretch-s">
-                  <Text>Stretch S</Text>
+                  <Typography>Stretch S</Typography>
                 </Item>
                 <Item center padding="stretch-m">
-                  <Text>Stretch M</Text>
+                  <Typography>Stretch M</Typography>
                 </Item>
               </Box>
 
-              <Box column margin="stack-base">
+              <Item margin="stack-base">
+                <Typography>Margin &mdash; Stack</Typography>
+              </Item>
+
+              <Box column margin="stack-xl">
                 <Item center margin="stack-base">
-                  <Text>Stack Base</Text>
+                  <Typography>Stack Base</Typography>
+                </Item>
+                <Item center margin="stack-xs">
+                  <Typography>Stack XS</Typography>
                 </Item>
                 <Item center margin="stack-s">
-                  <Text>Stack S</Text>
+                  <Typography>Stack S</Typography>
                 </Item>
                 <Item center margin="stack-m">
-                  <Text>Stack M</Text>
+                  <Typography>Stack M</Typography>
                 </Item>
                 <Item center margin="stack-l">
-                  <Text>Stack L</Text>
+                  <Typography>Stack L</Typography>
                 </Item>
                 <Item center margin="stack-xl">
-                  <Text>Stack XL</Text>
+                  <Typography>Stack XL</Typography>
                 </Item>
               </Box>
+
+              <Item margin="stack-base">
+                <Typography>Margin &mdash; Inline</Typography>
+              </Item>
 
               <Box row>
                 <Item center margin="inline-base">
-                  <Text>Inline Base</Text>
+                  <Typography>Inline Base</Typography>
+                </Item>
+                <Item center margin="inline-xs">
+                  <Typography>Inline XS</Typography>
                 </Item>
                 <Item center margin="inline-s">
-                  <Text>Inline S</Text>
+                  <Typography>Inline S</Typography>
                 </Item>
                 <Item center margin="inline-m">
-                  <Text>Inline M</Text>
+                  <Typography>Inline M</Typography>
                 </Item>
                 <Item center margin="inline-l">
-                  <Text>Inline L</Text>
+                  <Typography>Inline L</Typography>
                 </Item>
                 <Item center margin="inline-xl">
-                  <Text>Inline XL</Text>
-                </Item>
-              </Box>
-            </Container>
-
-            <Container>
-              <Box>
-                <Item>
-                  <Text>Test</Text>
+                  <Typography>Inline XL</Typography>
                 </Item>
               </Box>
             </Container>

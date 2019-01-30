@@ -14,15 +14,16 @@ Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
 // >>> Global styles
-// const GlobalStyle = createGlobalStyle`
-//   html, body {
-//   }
+const GlobalStyle = createGlobalStyle`
+  html, body, #__next {
+    height: 100%;
+}
 
-//   body {
-//     color: ${style.color.dark};
-//     font-family: ${style.font.family.primary};
-//   }
-// `;
+  body {
+    color: ${style.color.dark};
+    font-family: ${style.font.family.primary};
+  }
+`;
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -41,7 +42,7 @@ export default class MyApp extends App {
     return (
       <ThemeProvider theme={style}>
         <Container>
-          {/* <GlobalStyle /> */}
+          <GlobalStyle />
           <Component {...pageProps} />
         </Container>
       </ThemeProvider>
