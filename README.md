@@ -1,5 +1,5 @@
 # Discipline
-A simple component-based abstraction of CSS layout styling for React using styled-components.
+A simple component-based framework of CSS layout styling for React using styled-components.
 
 ```bash
 npm install
