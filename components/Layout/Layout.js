@@ -97,16 +97,31 @@ const StyledItem = styled.div`
 
 const AnimatedItem = animated(StyledItem);
 
-const Item = props => {
+const Item = ({ name, ...props }) => {
   return props.animate ? (
-    <AnimatedItem className={name ? `item-${name}` : "item"} {...props}>
+    <AnimatedItem className={name ? `item item-${name}` : "item"} {...props}>
       {props.children}
     </AnimatedItem>
   ) : (
-    <StyledItem className={name ? `item-${name}` : "item"} {...props}>
+    <StyledItem className={name ? `item item-${name}` : "item"} {...props}>
       {props.children}
     </StyledItem>
   );
+};
+
+Item.propTypes = {
+  padding: PropTypes.string,
+  margin: PropTypes.string,
+  animate: PropTypes.bool,
+  name: PropTypes.string,
+  topleft: PropTypes.bool,
+  top: PropTypes.bool,
+  topright: PropTypes.bool,
+  right: PropTypes.bool,
+  center: PropTypes.bool,
+  bottomleft: PropTypes.bool,
+  bottom: PropTypes.bool,
+  bottomright: PropTypes.bool
 };
 
 /* 
@@ -133,7 +148,7 @@ const AnimatedBox = animated(StyledBox);
 const Box = ({ name, wrap, ...props }) => {
   return props.animate ? (
     <AnimatedBox
-      className={name ? `box-${name}` : "box"}
+      className={name ? `box box-${name}` : "box"}
       wrap={wrap ? "true" : "false"}
       {...props}
     >
@@ -141,13 +156,26 @@ const Box = ({ name, wrap, ...props }) => {
     </AnimatedBox>
   ) : (
     <StyledBox
-      className={name ? `box-${name}` : "box"}
+      className={name ? `box box-${name}` : "box"}
       wrap={wrap ? "true" : "false"}
       {...props}
     >
       {props.children}
     </StyledBox>
   );
+};
+
+Box.propTypes = {
+  padding: PropTypes.string,
+  margin: PropTypes.string,
+  animate: PropTypes.bool,
+  name: PropTypes.string,
+  row: PropTypes.bool,
+  column: PropTypes.bool,
+  wrap: PropTypes.bool,
+  nowrap: PropTypes.bool,
+  justify: PropTypes.string,
+  align: PropTypes.string
 };
 
 /* 
@@ -162,22 +190,29 @@ const StyledContainer = styled.div`
 
 const AnimatedContainer = animated(StyledContainer);
 
-const Container = props => {
+const Container = ({ name, ...props }) => {
   return props.animate ? (
     <AnimatedContainer
-      className={name ? `container-${name}` : "container"}
+      className={name ? `container container-${name}` : "container"}
       {...props}
     >
       {props.children}
     </AnimatedContainer>
   ) : (
     <StyledContainer
-      className={name ? `container-${name}` : "container"}
+      className={name ? `container container-${name}` : "container"}
       {...props}
     >
       {props.children}
     </StyledContainer>
   );
+};
+
+Container.propTypes = {
+  padding: PropTypes.string,
+  margin: PropTypes.string,
+  animate: PropTypes.bool,
+  name: PropTypes.string
 };
 
 /* 
@@ -192,16 +227,23 @@ const StyledArea = styled.div`
 
 const AnimatedArea = animated(StyledArea);
 
-const Area = props => {
+const Area = ({ name, ...props }) => {
   return props.animate ? (
-    <AnimatedArea className={name ? `area-${name}` : "area"} {...props}>
+    <AnimatedArea className={name ? `area area-${name}` : "area"} {...props}>
       {props.children}
     </AnimatedArea>
   ) : (
-    <StyledArea className={name ? `area-${name}` : "area"} {...props}>
+    <StyledArea className={name ? `area area-${name}` : "area"} {...props}>
       {props.children}
     </StyledArea>
   );
+};
+
+Area.propTypes = {
+  padding: PropTypes.string,
+  margin: PropTypes.string,
+  animate: PropTypes.bool,
+  name: PropTypes.string
 };
 
 export { Item, Box, Container, Area };

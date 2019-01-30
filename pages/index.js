@@ -13,19 +13,23 @@ const GlobalStyle = createGlobalStyle`
 
 const StyledWrapper = styled.div`
   .area {
-    border: 1px solid red;
+    border: 2px dashed red;
+    /* background-color: rgba(255, 0, 0, 0.5); */
   }
 
   .container {
-    border: 1px solid green;
+    border: 2px dashed green;
+    /* background-color: rgba(0, 255, 0, 0.5); */
   }
 
   .box {
-    border: 1px solid blue;
+    border: 2px dashed blue;
+    background-color: rgba(200, 220, 255, 1);
   }
-  
+
   .item {
-    border: 1px solid black;
+    border: 1px dashed grey;
+    background-color: rgba(200, 200, 200, 1);
   }
 `;
 
@@ -38,7 +42,7 @@ export default class extends Component {
         <StyledWrapper>
           <Area padding="inset-base">
             <Container margin="stack-base">
-              <Box row animate align="flex-start" margin="stack-base">
+              <Box name="test" row align="flex-start" margin="stack-base">
                 <Item center padding="inset-base">
                   <Text>Inset Base</Text>
                 </Item>
