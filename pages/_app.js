@@ -50,25 +50,23 @@ export default class MyApp extends App {
 
     return (
       <Fragment>
-        <MediaQuery maxWidth="45em">
-          {matches =>
-            matches ? (
-              <ThemeProvider theme={styleMobile}>
-                <Container>
-                  <GlobalStyle />
-                  <Component {...pageProps} />
-                </Container>
-              </ThemeProvider>
-            ) : (
-              <ThemeProvider theme={style}>
-                <Container>
-                  <GlobalStyle />
-                  <Component {...pageProps} />
-                </Container>
-              </ThemeProvider>
-            )
-          }
-        </MediaQuery>
+        {/* <MediaQuery maxWidth="719px" values={{ deviceWidth: 1600 }}>
+          <ThemeProvider theme={styleMobile}>
+            <Container>
+              <GlobalStyle />
+              <Component {...pageProps} />
+            </Container>
+          </ThemeProvider>
+        </MediaQuery> */}
+
+        {/* <MediaQuery minWidth="720px"> */}
+          <ThemeProvider theme={style}>
+            <Container>
+              <GlobalStyle />
+              <Component {...pageProps} />
+            </Container>
+          </ThemeProvider>
+        {/* </MediaQuery> */}
       </Fragment>
     );
   }
