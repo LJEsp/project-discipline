@@ -50,23 +50,23 @@ export default class MyApp extends App {
 
     return (
       <Fragment>
-        {/* <MediaQuery maxWidth="719px" values={{ deviceWidth: 1600 }}>
+        <MediaQuery maxWidth="719px">
           <ThemeProvider theme={styleMobile}>
             <Container>
               <GlobalStyle />
               <Component {...pageProps} />
             </Container>
           </ThemeProvider>
-        </MediaQuery> */}
+        </MediaQuery>
 
-        {/* <MediaQuery minWidth="720px"> */}
+        <MediaQuery minWidth="720px">
           <ThemeProvider theme={style}>
             <Container>
               <GlobalStyle />
               <Component {...pageProps} />
             </Container>
           </ThemeProvider>
-        {/* </MediaQuery> */}
+        </MediaQuery>
       </Fragment>
     );
   }
