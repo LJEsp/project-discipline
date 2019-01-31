@@ -50,6 +50,7 @@ const spacingProperties = ({
   const inlineL = `0 ${size.l} 0 0`;
   const inlineXl = `0 ${size.xl} 0 0`;
 
+  /*
   // //////////// Mobile ////////////
   // >>> Padding — Inset: base, xs, s, m, l, xl
   const insetBaseMobile = `${sizeMobile.base} ${sizeMobile.base} ${
@@ -105,7 +106,8 @@ const spacingProperties = ({
   const inlineMMobile = `0 ${sizeMobile.m} 0 0`;
   const inlineLMobile = `0 ${sizeMobile.l} 0 0`;
   const inlineXlMobile = `0 ${sizeMobile.xl} 0 0`;
-
+  */
+ 
   return css`
     padding: ${(padding === "inset-base" && insetL) ||
       (padding === "inset-xs" && insetXs) ||
@@ -133,7 +135,7 @@ const spacingProperties = ({
       (margin === "inline-l" && inlineL) ||
       (margin === "inline-xl" && inlineXl)};
 
-    @media (max-width: 45em) {
+    ${'' /* @media (max-width: 45em) {
       padding: ${(padding === "inset-base" && insetLMobile) ||
         (padding === "inset-xs" && insetXsMobile) ||
         (padding === "inset-s" && insetSMobile) ||
@@ -159,7 +161,7 @@ const spacingProperties = ({
         (margin === "inline-m" && inlineMMobile) ||
         (margin === "inline-l" && inlineLMobile) ||
         (margin === "inline-xl" && inlineXlMobile)};
-    }
+    } */}
   `;
 };
 

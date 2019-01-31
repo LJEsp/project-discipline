@@ -8,7 +8,6 @@ const baseStyle = css``;
 const StyledText = styled.span`
   ${props => textCrop(props.theme.font.lineHeight)}
   font-size: ${props => props.theme.font.scale[props.size]};;
-
 `;
 
 export class Typography extends Component {

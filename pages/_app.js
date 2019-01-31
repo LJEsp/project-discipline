@@ -1,9 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
 import App, { Container } from "next/app";
 import NProgress from "nprogress";
 import Router from "next/router";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import style from "../config/style";
+import styleMobile from "../config/styleMobile";
+import MediaQuery from "react-responsive";
 
 // >>> Update progress bar on router events
 Router.events.on("routeChangeStart", url => {
@@ -46,13 +48,35 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
 
+    // style.size.base = "1em";
+    // style.size.xl = "2.67em";
+    // style.size.l = "1.33em";
+    // style.size.m = "0.67em";
+    // style.size.s = "0.33em";
+    // style.size.xs = "0.17em";
+
     return (
-      <ThemeProvider theme={style}>
-        <Container>
-          <GlobalStyle />
-          <Component {...pageProps} />
-        </Container>
-      </ThemeProvider>
+      <Fragment>
+        <MediaQuery maxWidth="45em">
+          {matches =>
+            matches ? (
+              <ThemeProvider theme={styleMobile}>
+                <Container>
+                  <GlobalStyle />
+                  <Component {...pageProps} />
+                </Container>
+              </ThemeProvider>
+            ) : (
+              <ThemeProvider theme={style}>
+                <Container>
+                  <GlobalStyle />
+                  <Component {...pageProps} />
+                </Container>
+              </ThemeProvider>
+            )
+          }
+        </MediaQuery>
+      </Fragment>
     );
   }
 }
