@@ -27,8 +27,7 @@ const StyledWrapper = styled.div`
   }
 
   .item-test {
-    width: 10em;
-    height: 10em;
+    background-color: red;
   }
 `;
 

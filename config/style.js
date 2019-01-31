@@ -1,5 +1,3 @@
-import { css } from "styled-components";
-
 export default {
   // >>> desktop first breakpoints
   breakpoint: {
@@ -56,8 +54,7 @@ export default {
     l: "2em", // >>> 32
     xl: "4em", // >>> 64
     base: "1.5em", // >>> 24px/3em for desktop, 16px/1em for mobile
-    px: px => `${px / 16}em`,
-    increment: increment => `${increment * 1.5}em`
+    px: px => `${px / 16}em`
   },
   sizeMobile: {
     xs: "0.17em", //
@@ -65,10 +62,9 @@ export default {
     m: "0.67em", //
     l: "1.33em", //
     xl: "2.67em", //
-    base: "1em", //
-    px: px => `${px / 16 / 1.5}em`,
-    increment: increment => `${increment * 1}em`
+    base: "1em" //
   },
+  increment: increment => `calc(${increment} * var(--size-base))`,
   shadow: [
     "0 0.0625em 0.1875em rgba(0,0,0,0.12), 0 0.0625em 0.125em rgba(0,0,0,0.24)",
     "0 0.1875em 0.375em rgba(0,0,0,0.16), 0 0.1875em 0.375em rgba(0,0,0,0.23)",
