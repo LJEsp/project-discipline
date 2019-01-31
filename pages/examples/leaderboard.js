@@ -8,7 +8,8 @@ import { Spring, Trail } from "react-spring";
 const StyledWrapper = styled.div`
   width: calc(100% / 1.618);
   margin: 0 auto;
-  @media (max-width: ${p => p.theme.breakpoint[2]}) {
+
+  @media (max-width: ${p => p.theme.breakpoint.tabletLarge}) {
     width: 100%;
   }
 

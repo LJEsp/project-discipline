@@ -4,8 +4,6 @@ import NProgress from "nprogress";
 import Router from "next/router";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import style from "../config/style";
-import styleMobile from "../config/styleMobile";
-import MediaQuery from "react-responsive";
 
 // >>> Update progress bar on router events
 Router.events.on("routeChangeStart", url => {
@@ -24,15 +22,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     color: ${style.color.dark};
     font-family: ${style.font.family.primary};
-    font-size: 1rem;
-
-    ${"" /* @media (max-width: 45rem) {
-      font-size: 0.9375rem;
-    } */}
+    font-size: 19px;
   }
 `;
-
-// >>> For mobile devices
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -50,23 +42,12 @@ export default class MyApp extends App {
 
     return (
       <Fragment>
-        <MediaQuery maxWidth="719px">
-          <ThemeProvider theme={styleMobile}>
-            <Container>
-              <GlobalStyle />
-              <Component {...pageProps} />
-            </Container>
-          </ThemeProvider>
-        </MediaQuery>
-
-        <MediaQuery minWidth="720px">
-          <ThemeProvider theme={style}>
-            <Container>
-              <GlobalStyle />
-              <Component {...pageProps} />
-            </Container>
-          </ThemeProvider>
-        </MediaQuery>
+        <ThemeProvider theme={style}>
+          <Container>
+            <GlobalStyle />
+            <Component {...pageProps} />
+          </Container>
+        </ThemeProvider>
       </Fragment>
     );
   }

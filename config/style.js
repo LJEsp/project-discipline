@@ -1,10 +1,13 @@
+import { css } from "styled-components";
+
 export default {
-  breakpoint: [
-    // >>> desktop first breakpoints
-    "37.4375rem", // >>> 599px
-    "44.9375rem", // >>> 719px
-    "52.4375rem" // >>> 839px
-  ],
+  // >>> desktop first breakpoints
+  breakpoint: {
+    mobile: "599px", // >>> 599px
+    tabletSmall: "719px", // >>> 719px
+    tabletSmallEnd: "720px", // >>> 719px
+    tabletLarge: "839px" // >>> 839px
+  },
   font: {
     family: {
       primary: "Montserrat, sans-serif"
@@ -56,12 +59,22 @@ export default {
     px: px => `${px / 16}em`,
     increment: increment => `${increment * 1.5}em`
   },
+  sizeMobile: {
+    xs: "0.17em", //
+    s: "0.33em", //
+    m: "0.67em", //
+    l: "1.33em", //
+    xl: "2.67em", //
+    base: "1em", //
+    px: px => `${px / 16 / 1.5}em`,
+    increment: increment => `${increment * 1}em`
+  },
   shadow: [
-    "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-    "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
-    "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
-    "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)",
-    "0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)"
+    "0 0.0625em 0.1875em rgba(0,0,0,0.12), 0 0.0625em 0.125em rgba(0,0,0,0.24)",
+    "0 0.1875em 0.375em rgba(0,0,0,0.16), 0 0.1875em 0.375em rgba(0,0,0,0.23)",
+    "0 0.625em 1.25em rgba(0,0,0,0.19), 0 0.375em 0.375em rgba(0,0,0,0.23)",
+    "0 0.875em 1.75em rgba(0,0,0,0.25), 0 0.625em 0.625em rgba(0,0,0,0.22)",
+    "0 1.1875em 2.375em rgba(0,0,0,0.30), 0 0.9375em 0.75em rgba(0,0,0,0.22)"
   ]
 };
 

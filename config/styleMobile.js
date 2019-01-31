@@ -1,10 +1,10 @@
 export default {
-  breakpoint: [
-    // >>> desktop first breakpoints
-    "37.4375rem", // >>> 599px
-    "44.9375rem", // >>> 719px
-    "52.4375rem" // >>> 839px
-  ],
+  breakpoint: {
+    mobile: "599px", // >>> 599px
+    tabletSmall: "719px", // >>> 719px
+    tabletSmallEnd: "720px", // >>> 719px
+    tabletLarge: "839px" // >>> 839px
+  },
   font: {
     family: {
       primary: "Montserrat, sans-serif"

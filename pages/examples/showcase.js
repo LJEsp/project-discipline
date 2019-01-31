@@ -25,6 +25,11 @@ const StyledWrapper = styled.div`
   .box-header {
     border: 1px solid magenta;
   }
+
+  .item-test {
+    width: 10em;
+    height: 10em;
+  }
 `;
 
 export default class extends Component {
@@ -157,6 +162,8 @@ export default class extends Component {
               </Box>
             </Container>
           </Area>
+
+          <Item name="test" />
         </StyledWrapper>
       </Fragment>
     );
