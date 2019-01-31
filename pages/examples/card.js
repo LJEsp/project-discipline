@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Item, Box, Container, Area } from "../../components/layout/layout";
+import { Item, Box, Container, Area } from "../../components/layout";
 import Typography from "../../components/Typography/Typography";
 
 const StyledCard = styled.article`

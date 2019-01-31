@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import styled from "styled-components";
 import Typography from "../../components/Typography/Typography";
-import { Item, Box, Container, Area } from "../../components/layout/layout";
+import { Item, Box, Container, Area } from "../../components/layout";
 
 const StyledWrapper = styled.div`
   .area {
