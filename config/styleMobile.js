@@ -52,7 +52,9 @@ export default {
     m: "0.67em", //
     l: "1.33em", //
     xl: "2.67em", //
-    base: "1em" //
+    base: "1em", //
+    px: px => `${px / 16 / 1.5}em`,
+    increment: increment => `${increment * 1}em`
   },
   shadow: [
     "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",

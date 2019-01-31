@@ -48,13 +48,6 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
 
-    // style.size.base = "1em";
-    // style.size.xl = "2.67em";
-    // style.size.l = "1.33em";
-    // style.size.m = "0.67em";
-    // style.size.s = "0.33em";
-    // style.size.xs = "0.17em";
-
     return (
       <Fragment>
         <MediaQuery maxWidth="45em">

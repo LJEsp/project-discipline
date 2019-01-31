@@ -4,8 +4,6 @@ import Typography from "../../components/Typography/Typography";
 import { Item, Box, Container, Area } from "../../components/Layout/Layout";
 
 const StyledWrapper = styled.div`
-  width: 100vw;
-
   .area {
     border: 2px dashed red;
   }
@@ -24,6 +22,9 @@ const StyledWrapper = styled.div`
     background-color: rgba(200, 200, 200, 1);
   }
 
+  .box-header {
+    border: 1px solid magenta;
+  }
 `;
 
 export default class extends Component {
@@ -31,7 +32,7 @@ export default class extends Component {
     return (
       <Fragment>
         <StyledWrapper>
-          <Box>
+          <Box name="header">
             <Item topleft padding="squish-l" margin="inline-xl">
               <Typography size={1}>Logo</Typography>
             </Item>

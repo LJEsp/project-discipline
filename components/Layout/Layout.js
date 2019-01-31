@@ -14,7 +14,7 @@ import { animated } from "react-spring";
 const spacingProperties = ({
   padding,
   margin,
-  theme: { size, sizeMobile }
+  theme: { size }
 }) => {
   // >>> CSS shorthand reference: top, right, bottom, left
   // >>> Padding — Inset: base, xs, s, m, l, xl
@@ -107,7 +107,7 @@ const spacingProperties = ({
   const inlineLMobile = `0 ${sizeMobile.l} 0 0`;
   const inlineXlMobile = `0 ${sizeMobile.xl} 0 0`;
   */
- 
+
   return css`
     padding: ${(padding === "inset-base" && insetL) ||
       (padding === "inset-xs" && insetXs) ||
