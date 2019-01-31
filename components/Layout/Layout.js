@@ -11,7 +11,11 @@ import { animated } from "react-spring";
   Margin — Stack: base, xs, s, m, l, xl
   Margin — Inline: base, xs, s, m, l, xl
 */
-const spacingProperties = ({ padding, margin, theme: { size } }) => {
+const spacingProperties = ({
+  padding,
+  margin,
+  theme: { size, sizeMobile }
+}) => {
   // >>> CSS shorthand reference: top, right, bottom, left
   // >>> Padding — Inset: base, xs, s, m, l, xl
   const insetBase = `${size.base} ${size.base} ${size.base} ${size.base}`;
@@ -46,6 +50,62 @@ const spacingProperties = ({ padding, margin, theme: { size } }) => {
   const inlineL = `0 ${size.l} 0 0`;
   const inlineXl = `0 ${size.xl} 0 0`;
 
+  // //////////// Mobile ////////////
+  // >>> Padding — Inset: base, xs, s, m, l, xl
+  const insetBaseMobile = `${sizeMobile.base} ${sizeMobile.base} ${
+    sizeMobile.base
+  } ${sizeMobile.base}`;
+  const insetXsMobile = `${sizeMobile.xs} ${sizeMobile.xs} ${sizeMobile.xs} ${
+    sizeMobile.xs
+  }`;
+  const insetSMobile = `${sizeMobile.s} ${sizeMobile.s} ${sizeMobile.s} ${
+    sizeMobile.s
+  }`;
+  const insetMMobile = `${sizeMobile.m} ${sizeMobile.m} ${sizeMobile.m} ${
+    sizeMobile.m
+  }`;
+  const insetLMobile = `${sizeMobile.l} ${sizeMobile.l} ${sizeMobile.l} ${
+    sizeMobile.l
+  }`;
+  const insetXlMobile = `${sizeMobile.xl} ${sizeMobile.xl} ${sizeMobile.xl} ${
+    sizeMobile.xl
+  }`;
+
+  // >>> Padding — Squish: s, m, l
+  const squishSMobile = `${sizeMobile.xs} ${sizeMobile.s} ${sizeMobile.xs} ${
+    sizeMobile.s
+  }`;
+  const squishMMobile = `${sizeMobile.s} ${sizeMobile.m} ${sizeMobile.s} ${
+    sizeMobile.m
+  }`;
+  const squishLMobile = `${sizeMobile.m} ${sizeMobile.l} ${sizeMobile.m} ${
+    sizeMobile.l
+  }`;
+
+  // >>> Padding — Stretch: s, m
+  const stretchSMobile = `${sizeMobile.m} ${sizeMobile.s} ${sizeMobile.m} ${
+    sizeMobile.s
+  }`;
+  const stretchMMobile = `${sizeMobile.base} ${sizeMobile.m} ${
+    sizeMobile.base
+  } ${sizeMobile.m}`;
+
+  // >>> Margin — Stack: base, xs, s, m, l, xl
+  const stackBaseMobile = `0 0 ${sizeMobile.base} 0`;
+  const stackXsMobile = `0 0 ${sizeMobile.xs} 0`;
+  const stackSMobile = `0 0 ${sizeMobile.s} 0`;
+  const stackMMobile = `0 0 ${sizeMobile.m} 0`;
+  const stackLMobile = `0 0 ${sizeMobile.l} 0`;
+  const stackXlMobile = `0 0 ${sizeMobile.xl} 0`;
+
+  // >>> Margin — Inline: base, xs, s, m, l, xl
+  const inlineBaseMobile = `0 ${sizeMobile.base} 0 0`;
+  const inlineXsMobile = `0 ${sizeMobile.xs} 0 0`;
+  const inlineSMobile = `0 ${sizeMobile.s} 0 0`;
+  const inlineMMobile = `0 ${sizeMobile.m} 0 0`;
+  const inlineLMobile = `0 ${sizeMobile.l} 0 0`;
+  const inlineXlMobile = `0 ${sizeMobile.xl} 0 0`;
+
   return css`
     padding: ${(padding === "inset-base" && insetL) ||
       (padding === "inset-xs" && insetXs) ||
@@ -72,6 +132,34 @@ const spacingProperties = ({ padding, margin, theme: { size } }) => {
       (margin === "inline-m" && inlineM) ||
       (margin === "inline-l" && inlineL) ||
       (margin === "inline-xl" && inlineXl)};
+
+    @media (max-width: 45em) {
+      padding: ${(padding === "inset-base" && insetLMobile) ||
+        (padding === "inset-xs" && insetXsMobile) ||
+        (padding === "inset-s" && insetSMobile) ||
+        (padding === "inset-m" && insetMMobile) ||
+        (padding === "inset-l" && insetBaseMobile) ||
+        (padding === "inset-xl" && insetXlMobile) ||
+        (padding === "squish-base" && squishBaseMobile) ||
+        (padding === "squish-s" && squishSMobile) ||
+        (padding === "squish-m" && squishMMobile) ||
+        (padding === "squish-l" && squishLMobile) ||
+        (padding === "stretch-s" && stretchSMobile) ||
+        (padding === "stretch-m" && stretchMMobile)};
+
+      margin: ${(margin === "stack-base" && stackBaseMobile) ||
+        (margin === "stack-xs" && stackXsMobile) ||
+        (margin === "stack-s" && stackSMobile) ||
+        (margin === "stack-m" && stackMMobile) ||
+        (margin === "stack-l" && stackLMobile) ||
+        (margin === "stack-xl" && stackXlMobile) ||
+        (margin === "inline-base" && inlineBaseMobile) ||
+        (margin === "inline-xs" && inlineXsMobile) ||
+        (margin === "inline-s" && inlineSMobile) ||
+        (margin === "inline-m" && inlineMMobile) ||
+        (margin === "inline-l" && inlineLMobile) ||
+        (margin === "inline-xl" && inlineXlMobile)};
+    }
   `;
 };
 
@@ -128,6 +216,7 @@ Item.propTypes = {
   >>> Box
   row / column
   wrap / nowrap
+  grow
   justify: [ justify-content values]
   align: [ align-items values ]
   padding: [refer to spacingProperties]
@@ -141,6 +230,7 @@ const StyledBox = styled.div`
   flex-wrap: ${props => (props.wrap && "wrap") || (props.nowrap && "nowrap")};
   justify-content: ${props => props.justify};
   align-items: ${props => props.align};
+  flex-grow: ${props => props.grow && "1"};
 `;
 
 const AnimatedBox = animated(StyledBox);

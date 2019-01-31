@@ -22,8 +22,15 @@ const GlobalStyle = createGlobalStyle`
   body {
     color: ${style.color.dark};
     font-family: ${style.font.family.primary};
+    font-size: 1rem;
+
+    ${"" /* @media (max-width: 45rem) {
+      font-size: 0.9375rem;
+    } */}
   }
 `;
+
+// >>> For mobile devices
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {

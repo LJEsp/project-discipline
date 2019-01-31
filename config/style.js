@@ -18,7 +18,7 @@ export default {
       "2em", // >>> 32px
       "3em", // >>> 48px
       "3.875em" // >>> 62px
-    ] 
+    ]
   },
   color: {
     primary: {
@@ -54,6 +54,14 @@ export default {
     xl: "4em", // >>> 64
     base: "1.5em", // >>> 24px/3em for desktop, 16px/1em for mobile
     em: px => `${px / 16}em`
+  },
+  sizeMobile: {
+    xs: "0.17em", //
+    s: "0.33em", //
+    m: "0.67em", //
+    l: "1.33em", //
+    xl: "2.67em", //
+    base: "1em" //
   },
   shadow: [
     "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",

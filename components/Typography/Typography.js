@@ -7,18 +7,19 @@ const baseStyle = css``;
 
 const StyledText = styled.span`
   ${props => textCrop(props.theme.font.lineHeight)}
+  font-size: ${props => props.theme.font.scale[props.size]};;
 
-  color: ${props => (props.as === "h1" ? "red" : "green")};
-  font-size: ${props => props.theme.font.scale[1]};;
 `;
 
 export class Typography extends Component {
   static propTypes = {
-    children: PropTypes.string.isRequired
+    as: PropTypes.string,
+    size: PropTypes.number
   };
 
   static defaultProps = {
-    as: "span"
+    as: "span",
+    size: 0
   };
 
   render() {
