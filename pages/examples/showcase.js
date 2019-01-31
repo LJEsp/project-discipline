@@ -26,8 +26,8 @@ const StyledWrapper = styled.div`
     border: 1px solid magenta;
   }
 
-  .item-test {
-    background-color: red;
+  .item-heading {
+    background-color: aquamarine;
   }
 `;
 
@@ -36,27 +36,9 @@ export default class extends Component {
     return (
       <Fragment>
         <StyledWrapper>
-          <Box name="header">
-            <Item topleft padding="squish-l" margin="inline-xl">
-              <Typography size={1}>Logo</Typography>
-            </Item>
-            <Item topleft padding="squish-l" margin="inline-base">
-              <Typography>Home</Typography>
-            </Item>
-            <Item topleft padding="squish-l" margin="inline-base">
-              <Typography>Shop</Typography>
-            </Item>
-            <Item topleft padding="squish-l" margin="inline-base">
-              <Typography>About</Typography>
-            </Item>
-            <Item topleft padding="squish-l" margin="inline-base">
-              <Typography>Contact</Typography>
-            </Item>
-          </Box>
-
           <Area name="1" padding="inset-base">
             <Container name="fruits" margin="stack-base">
-              <Item padding="inset-m" margin="stack-base">
+              <Item name="heading" padding="inset-m" margin="stack-base">
                 <Typography>Padding &mdash; Inset</Typography>
               </Item>
 
@@ -81,7 +63,7 @@ export default class extends Component {
                 </Item>
               </Box>
 
-              <Item padding="inset-m" margin="stack-base">
+              <Item name="heading" padding="inset-m" margin="stack-base">
                 <Typography>Padding &mdash; Squish</Typography>
               </Item>
 
@@ -97,7 +79,7 @@ export default class extends Component {
                 </Item>
               </Box>
 
-              <Item padding="inset-m" margin="stack-base">
+              <Item name="heading" padding="inset-m" margin="stack-base">
                 <Typography>Padding &mdash; Stretch</Typography>
               </Item>
 
@@ -110,7 +92,7 @@ export default class extends Component {
                 </Item>
               </Box>
 
-              <Item padding="inset-m" margin="stack-base">
+              <Item name="heading" padding="inset-m" margin="stack-base">
                 <Typography>Margin &mdash; Stack</Typography>
               </Item>
 
@@ -135,7 +117,7 @@ export default class extends Component {
                 </Item>
               </Box>
 
-              <Item padding="inset-m" margin="stack-base">
+              <Item name="heading" padding="inset-m" margin="stack-base">
                 <Typography>Margin &mdash; Inline</Typography>
               </Item>
 
@@ -161,8 +143,6 @@ export default class extends Component {
               </Box>
             </Container>
           </Area>
-
-          <Item name="test" />
         </StyledWrapper>
       </Fragment>
     );
