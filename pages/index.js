@@ -8,6 +8,14 @@ export default class extends Component {
         <Link href="/examples/showcase">
           <a>Showcase</a>
         </Link>
+
+        <Link href="/examples/leaderboard">
+          <a>Leaderboard</a>
+        </Link>
+
+        <Link href="/examples/card">
+          <a>Card</a>
+        </Link>
       </Fragment>
     );
   }

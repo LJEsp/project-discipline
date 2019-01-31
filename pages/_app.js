@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import App, { Container } from "next/app";
 import NProgress from "nprogress";
 import Router from "next/router";
@@ -36,8 +36,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html, body, #__next {
-    height: 100%;
-}
+    ${'' /* height: 100%; */}
+  }
 
   body {
     color: ${style.color.dark};
@@ -61,14 +61,12 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <Fragment>
-        <ThemeProvider theme={style}>
-          <Container>
-            <GlobalStyle />
-            <Component {...pageProps} />
-          </Container>
-        </ThemeProvider>
-      </Fragment>
+      <ThemeProvider theme={style}>
+        <Container>
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </Container>
+      </ThemeProvider>
     );
   }
 }

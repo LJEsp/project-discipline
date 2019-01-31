@@ -165,6 +165,7 @@ const spacingProperties = ({ padding, margin, theme: { size, sizeMobile } }) => 
   padding: [refer to spacingProperties]
   margin: [refer to spacingProperties]
   animate: Boolean
+  name: String
 */
 const StyledItem = styled.div`
   ${spacingProperties}
@@ -218,6 +219,7 @@ Item.propTypes = {
   padding: [refer to spacingProperties]
   margin: [refer to spacingProperties]
   animate: Boolean
+  name: String
 */
 const StyledBox = styled.div`
   ${spacingProperties}
@@ -269,6 +271,7 @@ Box.propTypes = {
   padding: [refer to spacingProperties]
   margin: [refer to spacingProperties]
   animate: Boolean
+  name: String
 */
 const StyledContainer = styled.div`
   ${spacingProperties};
@@ -306,6 +309,7 @@ Container.propTypes = {
   padding: [refer to spacingProperties]
   margin: [refer to spacingProperties]
   animate: Boolean
+  name: String
 */
 const StyledArea = styled.div`
   ${spacingProperties};

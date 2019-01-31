@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import styled from "styled-components";
 import Typography from "../../components/Typography/Typography";
 import Avatar from "../../components/Avatar/Avatar";
-import { Item, Box, Container, Area } from "../../components/Layout/Layout";
+import { Item, Box, Container, Area } from "../../components/layout/layout";
 import { Spring, Trail } from "react-spring";
 
 const StyledWrapper = styled.div`

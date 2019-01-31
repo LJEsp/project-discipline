@@ -54,7 +54,6 @@ export default {
     l: "2em", // >>> 32
     xl: "4em", // >>> 64
     base: "1.5em", // >>> 24px/3em for desktop, 16px/1em for mobile
-    px: px => `${px / 16}em`
   },
   sizeMobile: {
     xs: "0.17em", //
