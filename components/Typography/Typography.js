@@ -6,8 +6,12 @@ import textCrop from "../utils/textCrop";
 const baseStyle = css``;
 
 const StyledText = styled.span`
-  ${props => textCrop(props.theme.font.lineHeight)}
-  font-size: ${props => props.theme.font.scale[props.size]};;
+  /* ${p => textCrop()} */
+  ${p => textCrop(p.theme.font.lineHeight)}
+  /* line-height: ${p => (p.as === "p" ? p.theme.font.lineHeight : null)}; */
+  font-size: ${p => p.theme.font.scale[p.size]};
+  font-weight: ${p => (p.bold ? "700" : "300")};
+  text-transform: ${p => (p.uppercase ? "uppercase" : null)};
 `;
 
 export class Typography extends Component {
