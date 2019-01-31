@@ -41,7 +41,7 @@ const users = [
   },
   {
     name: "Gal Gadot",
-    username: "galgadot20",
+    username: "galgadot2",
     score: "12"
   },
   {
@@ -83,7 +83,7 @@ export default class extends Component {
             native
             delay={150}
             items={users}
-            // keys={(item, index) => index}
+            keys={users => users.username}
             from={{ opacity: "0", transform: "scale(0)" }}
             to={{ opacity: "1", transform: "scale(1)" }}
           >
